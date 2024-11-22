@@ -177,6 +177,52 @@ nav a {
   margin-bottom: 15px;
 }
 
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input, .contact-form textarea {
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.contact-form button {
+  padding: 12px;
+  background-color: #2a9d8f;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #1f7a67;
+}
+
+#status-message {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
 @media (max-width: 768px) {
   .about-content {
     flex-direction: column;
