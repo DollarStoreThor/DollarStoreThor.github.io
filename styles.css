@@ -91,7 +91,7 @@ body {
 }
 @keyframes fadeIn {
   to {
-    opacity: .75;
+    opacity: 1;
     transform: translateY(0);
   }
 }
