@@ -85,8 +85,16 @@ body {
 }
 
 .title-card p {
-  font-size: 1.5rem;
-  margin-top: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: .75;
+    transform: translateY(0);
+  }
 }
 
 html {
