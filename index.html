@@ -25,6 +25,20 @@
 
 <section id="about" class="section">
   <h2>About Me</h2>
+  <script>
+  document.addEventListener("scroll", function () {
+    const progressBars = document.querySelectorAll(".progress");
+    progressBars.forEach((bar) => {
+      const skillTop = bar.getBoundingClientRect().top;
+      const screenBottom = window.innerHeight;
+      if (skillTop < screenBottom) {
+        const skillLevel = bar.getAttribute("data-skill-level");
+        bar.style.width = skillLevel + "%";
+        bar.classList.add("animated");
+      }
+    });
+  });
+</script>
   <div class="about-content">
     <img src="unnamed.jpg" alt="Andrew Thomas" class="about-photo">
     <div class="about-text">
