@@ -236,7 +236,7 @@ nav a {
   max-width: 600px;
   line-height: 1.6;
   color: #555;
-  text-align: left; /* Optional: left-align text within the box */
+  text-align: center; /* Optional: left-align text within the box */
 }
 
 .about-text p {
