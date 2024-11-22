@@ -58,6 +58,16 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Flexbox Container */
+.container {
+  display: flex;               /* Apply Flexbox */
+  justify-content: space-between; /* Space between items */
+  align-items: center;          /* Align items vertically at the center */
+  gap: 20px;                    /* Space between items */
+  padding: 20px;
+  flex-wrap: wrap;              /* Allow items to wrap onto a new line if needed */
+}
+
 nav a {
   margin: 0 15px;
   text-decoration: none;
