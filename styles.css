@@ -63,26 +63,35 @@ body {
 }
 
 .title-card .overlay {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.5); /* Visible overlay for testing */
+  background-color: rgba(0, 0, 0, 0.5); /* Adds a dark overlay for contrast */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
-.title-card h1, .title-card p {
-  position: relative;
-  opacity: 1; /* Fully visible */
+.title-card h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
 }
 
+.title-card p {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1.5s ease-out forwards;
+}
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
   to {
-    opacity: 1; /* Fully visible */
+    opacity: .75;
     transform: translateY(0);
   }
 }
