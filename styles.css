@@ -82,13 +82,13 @@ body {
   font-size: 3rem;
   font-weight: bold;
   margin: 0;
-  opacity: 1;
+  opacity: 0;
   transform: translateY(20px);
-  animation: fadeIn 1.5s ease-in backwards;
+  animation: fadeIn 1.5s ease-out forwards;
 }
 
 .title-card p {
-  opacity: 1;
+  opacity: 0;
   transform: translateY(20px);
   animation: fadeIn 1.5s ease-out forwards;
 }
