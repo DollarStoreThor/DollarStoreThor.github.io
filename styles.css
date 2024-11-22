@@ -54,6 +54,41 @@ body {
   transform: translateY(0);
 }
 
+/* Title Card Section */
+.title-card {
+  position: relative;
+  height: 100vh; /* Full viewport height */
+  background: url('your-background-image.jpg') center center no-repeat;
+  background-size: cover;
+}
+
+.title-card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adds a dark overlay for contrast */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.title-card h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.title-card p {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
 html {
   scroll-behavior: smooth;
 }
