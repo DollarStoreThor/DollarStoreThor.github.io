@@ -84,18 +84,18 @@ body {
   margin: 0;
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeIn 1.5s ease-out forwards;
+  animation: fadeIn 2.5s ease-out forwards;
 }
 
 .title-card p {
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeIn 1.5s ease-out forwards;
+  animation: fadeIn 2.5s ease-out forwards;
 }
 
 @keyframes fadeIn {
   to {
-    opacity: .25;
+    opacity: 1;
     transform: translateY(0);
   }
 }
