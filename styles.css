@@ -81,6 +81,8 @@ body {
 .title-card h1 {
   font-size: 3rem;
   font-weight: bold;
+  transform: translateY(20px);
+  animation: fadeIn 1.5s ease-out forwards;
   margin: 0;
 }
 
