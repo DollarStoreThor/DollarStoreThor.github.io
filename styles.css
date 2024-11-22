@@ -1,3 +1,4 @@
+/* General Body Styling */
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -5,56 +6,9 @@ body {
   box-sizing: border-box;
 }
 
-/* Header Styling */
-.main-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: #2a9d8f;
-  color: white;
-  padding: 10px 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.125);
-  transition: all 0.3s ease;
-}
-
-.main-header .navbar {
 /* Flexbox Layout for Centering */
 .section {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.main-header a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 16px;
-  transition: color 0.3s ease;
-}
-
-.main-header a:hover {
-  color: #ffd166;
-}
-
-/* Main Heading Smooth Scroll Effect */
-.main-heading {
-  font-size: 2.5rem;
-  margin: 0;
-  color: #333;
-  opacity: 1;
-  transform: translateY(0);
-  transition: transform 0.6s ease, opacity 0.25s ease;
-}
-
-.section:not(:first-child) .main-heading {
-  opacity: 0;
-  transform: translateY(-50px);
-}
-
-.section:target .main-heading {
-  opacity: 1;
-  transform: translateY(0);
   justify-content: center; /* Centers content horizontally */
   align-items: center;     /* Centers content vertically */
   text-align: center;
