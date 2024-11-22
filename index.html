@@ -55,146 +55,148 @@
     });
   });
 </script>
-  <div class="about-content">
-    <img src="unnamed.jpg" alt="Andrew Thomas" class="about-photo">
-    <div class="about-text">
-      <p>
-        Hello! I'm Andrew Thomas, an aspiring Machine Learning and Data Engineer with a passion for deep learning and generative AI. As a soon-to-be graduate of Full-Stack Academy (December 2024) and an alumnus of Oklahoma State University (OSU), I bring a blend of academic excellence and hands-on experience to the tech industry.
-      </p>
-      <p>
-        I am currently completing my AI and Machine Learning training at Fullstack Academy, focusing on innovative projects that merge my background in biochemistry and genetics with cutting-edge technologies like OCR, computer vision, and predictive modeling.
-      </p>
-      <p>
-        My goal is to create impactful solutions, particularly in bioinformatics and healthcare, leveraging my unique blend of scientific expertise and technical skills. Let’s connect to explore opportunities or discuss exciting tech projects!
-      </p>
-    </div>
-  </div>
-</section>
-
-  <section id="projects" class="section">
-  <h2>Projects</h2>
-  <div class="project-card">
-    <h3>Employee Turnover Analytics</h3>
-    <p>Used clustering and predictive modeling to analyze and suggest employee retention strategies.</p>
-    <a href="https://github.com/your-username/employee-turnover-analytics" target="_blank" class="project-button">
-      View Project
-    </a>
-  </div>
-
-  <div class="project-card">
-    <h3>Bookshelf Classifier</h3>
-    <p>Computer vision project to locate, classify, and recommend books from a shelf using OCR.</p>
-    <a href="https://github.com/your-username/bookshelf-classifier" target="_blank" class="project-button">
-      View Project
-    </a>
-  </div>
-
-  <div class="project-card">
-    <h3>Real Estate Distance Analysis</h3>
-    <p>Analyzed location data to optimize real estate decisions using regression and clustering techniques.</p>
-    <a href="https://github.com/your-username/real-estate-distance-analysis" target="_blank" class="project-button">
-      View Project
-    </a>
-  </div>
-</section>
-
-  <section id="skills" class="section">
-  <h2>My Skills</h2>
-  <div class="skills-container">
-    <div class="skill">
-      <h3>Python</h3>
-      <div class="progress-bar">
-        <div class="progress" style="width: 90%;"></div>
+  <div class="container">
+    <div class="about-content">
+      <img src="unnamed.jpg" alt="Andrew Thomas" class="about-photo">
+      <div class="about-text">
+        <p>
+          Hello! I'm Andrew Thomas, an aspiring Machine Learning and Data Engineer with a passion for deep learning and generative AI. As a soon-to-be graduate of Full-Stack Academy (December 2024) and an alumnus of Oklahoma State University (OSU), I bring a blend of academic excellence and hands-on experience to the tech industry.
+        </p>
+        <p>
+          I am currently completing my AI and Machine Learning training at Fullstack Academy, focusing on innovative projects that merge my background in biochemistry and genetics with cutting-edge technologies like OCR, computer vision, and predictive modeling.
+        </p>
+        <p>
+          My goal is to create impactful solutions, particularly in bioinformatics and healthcare, leveraging my unique blend of scientific expertise and technical skills. Let’s connect to explore opportunities or discuss exciting tech projects!
+        </p>
       </div>
     </div>
-
-    <div class="skill">
-      <h3>Machine Learning</h3>
-      <div class="progress-bar">
-        <div class="progress" style="width: 85%;"></div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <h3>Computer Vision</h3>
-      <div class="progress-bar">
-        <div class="progress" style="width: 80%;"></div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <h3>Data Analysis</h3>
-      <div class="progress-bar">
-        <div class="progress" style="width: 85%;"></div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <h3>Bioinformatics</h3>
-      <div class="progress-bar">
-        <div class="progress" style="width: 70%;"></div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <h3>Deep Learning</h3>
-      <div class="progress-bar">
-        <div class="progress" style="width: 75%;"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="section">
-  <h2>Contact Me</h2>
-  <form id="contact-form" class="contact-form">
-    <div class="form-group">
-      <label for="name">Your Name</label>
-      <input type="text" id="from_name" name="from_name" placeholder="Your name" required>
-    </div>
-    <div class="form-group">
-      <label for="email">Your Email</label>
-      <input type="email" id="email" name="email" placeholder="Your email" required>
-    </div>
-    <div class="form-group">
-      <label for="message">Your Message</label>
-      <textarea id="message" name="message" placeholder="Your message" rows="4" required></textarea>
-    </div>
-    <button type="submit">Send Message</button>
-  </form>
-  <p id="status-message"></p>
-  <script>
-
-
+  </section>
   
-  // Form submission handler
-  document.getElementById("contact-form").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent form from reloading the page
-
-    // Get the form data
-    const formData = {
-      from_name: document.getElementById("from_name").value,
-      email: document.getElementById("email").value,
-      message: document.getElementById("message").value,
-    };
+    <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <h3>Employee Turnover Analytics</h3>
+      <p>Used clustering and predictive modeling to analyze and suggest employee retention strategies.</p>
+      <a href="https://github.com/your-username/employee-turnover-analytics" target="_blank" class="project-button">
+        View Project
+      </a>
+    </div>
   
-    // Send the form data using EmailJS
-    emailjs.send('Personal Email', "template_laaptos", formData)
-      .then(function(response) {
-        console.log("Success", response);
-        document.getElementById("status-message").textContent = "Message sent successfully!";
-        document.getElementById("contact-form").reset(); // Clear the form after submission
-      }, function(error) {
-        console.error("Error", error);
-        document.getElementById("status-message").textContent = "Oops! Something went wrong.";
-      });
-  });
-</script>
+    <div class="project-card">
+      <h3>Bookshelf Classifier</h3>
+      <p>Computer vision project to locate, classify, and recommend books from a shelf using OCR.</p>
+      <a href="https://github.com/your-username/bookshelf-classifier" target="_blank" class="project-button">
+        View Project
+      </a>
+    </div>
   
-</section>
+    <div class="project-card">
+      <h3>Real Estate Distance Analysis</h3>
+      <p>Analyzed location data to optimize real estate decisions using regression and clustering techniques.</p>
+      <a href="https://github.com/your-username/real-estate-distance-analysis" target="_blank" class="project-button">
+        View Project
+      </a>
+    </div>
+  </section>
   
-  <footer>
-    <p>© 2024 Andrew L Thomas | </p>
-  </footer>
+    <section id="skills" class="section">
+    <h2>My Skills</h2>
+    <div class="skills-container">
+      <div class="skill">
+        <h3>Python</h3>
+        <div class="progress-bar">
+          <div class="progress" style="width: 90%;"></div>
+        </div>
+      </div>
+  
+      <div class="skill">
+        <h3>Machine Learning</h3>
+        <div class="progress-bar">
+          <div class="progress" style="width: 85%;"></div>
+        </div>
+      </div>
+  
+      <div class="skill">
+        <h3>Computer Vision</h3>
+        <div class="progress-bar">
+          <div class="progress" style="width: 80%;"></div>
+        </div>
+      </div>
+  
+      <div class="skill">
+        <h3>Data Analysis</h3>
+        <div class="progress-bar">
+          <div class="progress" style="width: 85%;"></div>
+        </div>
+      </div>
+  
+      <div class="skill">
+        <h3>Bioinformatics</h3>
+        <div class="progress-bar">
+          <div class="progress" style="width: 70%;"></div>
+        </div>
+      </div>
+  
+      <div class="skill">
+        <h3>Deep Learning</h3>
+        <div class="progress-bar">
+          <div class="progress" style="width: 75%;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <form id="contact-form" class="contact-form">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="from_name" name="from_name" placeholder="Your name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="Your email" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" placeholder="Your message" rows="4" required></textarea>
+      </div>
+      <button type="submit">Send Message</button>
+    </form>
+    <p id="status-message"></p>
+    <script>
+  
+  
+    
+    // Form submission handler
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent form from reloading the page
+  
+      // Get the form data
+      const formData = {
+        from_name: document.getElementById("from_name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value,
+      };
+    
+      // Send the form data using EmailJS
+      emailjs.send('Personal Email', "template_laaptos", formData)
+        .then(function(response) {
+          console.log("Success", response);
+          document.getElementById("status-message").textContent = "Message sent successfully!";
+          document.getElementById("contact-form").reset(); // Clear the form after submission
+        }, function(error) {
+          console.error("Error", error);
+          document.getElementById("status-message").textContent = "Oops! Something went wrong.";
+        });
+    });
+  </script>
+    
+  </section>
+    
+    <footer>
+      <p>© 2024 Andrew L Thomas | </p>
+    </footer>
+  </div>
 </body>
 </html>
