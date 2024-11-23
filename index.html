@@ -196,5 +196,25 @@
         });
     });
   </script>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const dropdownButtons = document.querySelectorAll(".dropdown-toggle");
+
+    dropdownButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const projectImageContainer = button.nextElementSibling;
+
+        // Toggle dropdown
+        if (projectImageContainer.style.maxHeight) {
+          projectImageContainer.style.maxHeight = null; // Close the dropdown
+        } else {
+          projectImageContainer.style.maxHeight = projectImageContainer.scrollHeight + "px"; // Open the dropdown
+        }
+      });
+    });
+  });
+</script>
+  
 </body>
 </html>
