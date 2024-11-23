@@ -175,6 +175,63 @@ body {
   border-radius: 8px;
 }
 
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  position: relative;
+  margin: 10% auto;
+  padding: 20px;
+  width: 80%;
+  background: #fff;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.modal-content img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  color: #333;
+  cursor: pointer;
+}
+
+#slideshow-container {
+  max-height: 60vh;
+  margin-bottom: 20px;
+}
+
+#prev-slide,
+#next-slide {
+  background: #0077b5;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#prev-slide:hover,
+#next-slide:hover {
+  background: #005582;
+}
+
 /* Skill Section with Progress Bars */
 .skills-container {
   display: grid;
