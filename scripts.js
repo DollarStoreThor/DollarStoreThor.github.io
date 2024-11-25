@@ -62,41 +62,88 @@ function fetchImages(folder) {
   return imageMap[folder] || [];
 }
 
-  // Function to show the slideshow modal
-  function showSlideshow(folder) {
-    images = fetchImages(folder);
-    currentSlideIndex = 0;
-    slideshowContainer.innerHTML = `<img src="${images[currentSlideIndex]}" alt="Slideshow Image">`;
-    slideshowModal.style.display = "block";
-  }
+  // script for the project carousel
+  const projectData = [
+    { title: 'Book-Shelf Classifier', description: 'Computer vision project to Locate, Classify, and Recommend new books from an image of a user\'s shelf using Optical Ccharacter Recognition.' },
+    { title: 'Employee-Turnover Analytics', description: 'The HR department wanted to study the factors that contribute to employee turnover. As an ML developer, I performed an analysis using a clustering algorithm to identify which employees are most likely to leave, and suggest various retention strategies for targeted employees. My final model was able to predict employee turnover with 99% accuracy, with only 26 incorrect predictions in 3000.' },
+    { title: 'Linear Regression', description: 'The goal of this project was to create a simple animation depicting how Linear Regression  - A ubiquitous tool used in data analysis - is a simple Neural Network trying to determine the slope and y-intercept of given data.' },
+    { title: 'Autoencoders for Medical Imaging', description: 'I used an Encoder/Decoder arcitecture to train a Denoising Neural Netowrk. This was model was trained to help medical professionals, clearly and percisely view x-rays to allow for more acurate diagnosis.' },
+    { title: 'Project 5', description: 'Description for Project 5' },
+    { title: 'Project 6', description: 'Description for Project ' },
+    { title: 'Project 7', description: 'Description for Project ' },
+    { title: 'Project 8', description: 'Description for Project ' },
+    { title: 'Project 9', description: 'Description for Project ' },
+    { title: 'Project 10', description: 'Description for Project ' },
+    { title: 'Project 11', description: 'Description for Project ' },
+    { title: 'Project 12', description: 'Description for Project ' },
+    { title: 'Project 13', description: 'Description for Project ' },
+    { title: 'Project 14', description: 'Description for Project ' },
+    { title: 'Project 15', description: 'Description for Project ' },
+  
+  ];
 
-  // Function to change slides
-  function changeSlide(step) {
-    currentSlideIndex = (currentSlideIndex + step + images.length) % images.length;
-    slideshowContainer.innerHTML = `<img src="${images[currentSlideIndex]}" alt="Slideshow Image">`;
-  }
 
-  // Add event listeners to project buttons
-  document.querySelectorAll(".view-slideshow").forEach((button) => {
-    button.addEventListener("click", () => {
-      const folder = button.getAttribute("data-folder");
-      showSlideshow(folder);
+  const projectCarousel = document.getElementById('projectCarousel');
+  const indicators = document.getElementById('carouselIndicators');
+  let activeIndex = 0; // Keeps track of the active project
+  let autoScrollInterval; // To store the interval ID
+  
+  // Populate projects and dots dynamically
+  projectData.forEach((project, index) => {
+    // Add project cards
+    const card = document.createElement('div');
+    card.classList.add('project-card');
+    card.innerHTML = `<h3>${project.title}</h3><p>${project.description}</p>`;
+    projectCarousel.appendChild(card);
+  
+    // Add dots
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
+    if (index === 0) dot.classList.add('active'); // Set the first dot as active
+    dot.addEventListener('click', () => {
+      activeIndex = index;
+      updateCarouselPosition();
+      updateIndicators();
+      restartAutoScroll(); // Restart auto-scroll after manual navigation
     });
+    indicators.appendChild(dot);
   });
+  
+  // Update carousel position based on active index
+  function updateCarouselPosition() {
+    const cardWidth = projectCarousel.children[0].offsetWidth;
+    projectCarousel.style.transform = `translateX(-${activeIndex * cardWidth}px)`;
+    projectCarousel.style.transition = 'transform 0.5s ease';
+  }
+  
+  // Update indicators
+  function updateIndicators() {
+    document.querySelectorAll('.dot').forEach((dot, index) => {
+      dot.classList.toggle('active', index === activeIndex);
+    });
+  }
+  
+  // Auto-scroll function
+  function autoScroll() {
+    autoScrollInterval = setInterval(() => {
+      activeIndex = (activeIndex + 1) % projectData.length; // Loop through projects
+      updateCarouselPosition();
+      updateIndicators();
+    }, 5000); // Auto-scroll every 3 seconds
+  }
+  
+  // Restart auto-scroll after interaction
+  function restartAutoScroll() {
+    clearInterval(autoScrollInterval);
+    autoScroll();
+  }
+  
+  // Pause/resume auto-scroll on hover
+  const carouselContainer = document.getElementById('carousel');
+  carouselContainer.addEventListener('mouseenter', () => clearInterval(autoScrollInterval));
+  carouselContainer.addEventListener('mouseleave', () => autoScroll());
+  
+  // Start auto-scroll on page load
+  autoScroll();
 
-  // Close modal
-  closeModal.addEventListener("click", () => {
-    slideshowModal.style.display = "none";
-  });
-
-  // Slide navigation
-  prevSlide.addEventListener("click", () => changeSlide(-1));
-  nextSlide.addEventListener("click", () => changeSlide(1));
-
-  // Close modal when clicking outside the modal content
-  window.addEventListener("click", (event) => {
-    if (event.target === slideshowModal) {
-      slideshowModal.style.display = "none";
-    }
-  });
 });
