@@ -21,7 +21,7 @@
     <nav class="navbar">
       <a href="#home">Home</a>
       <a href="#about">About</a>
-      <a href="#projects">Projects</a>
+      <a href="#projectCarousel">Projects</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -52,43 +52,13 @@
   </div>
 </section>
 
-<section id="projects" class="section">
-  <h2>Projects</h2>
-
-  <!-- Project 1 -->
-  <div class="project-card">
-    <h3>Employee Turnover Analytics</h3>
-    <p>Used clustering and predictive modeling to analyze and suggest employee retention strategies.</p>
-    <button class="view-slideshow" data-folder="turnover-images">View Image</button>
-    <a href="https://github.com/your-username/employee-turnover-analytics" target="_blank" class="project-button">View Project</a>
-  </div>
-
-  <!-- Project 2 -->
-  <div class="project-card">
-    <h3>Bookshelf Classifier</h3>
-    <p>Computer vision project to locate, classify, and recommend books from a shelf using OCR.</p>
-    <button class="view-slideshow" data-folder="bookshelf-images">View Image</button>
-    <a href="https://github.com/your-username/bookshelf-classifier" target="_blank" class="project-button">View Project</a>
-  </div>
-
-  <!-- Project 3 -->
-  <div class="project-card">
-    <h3>Real Estate Distance Analysis</h3>
-    <p>Analyzed location data to optimize real estate decisions using regression and clustering techniques.</p>
-    <button class="view-slideshow" data-folder="realestate-images">View Image</button>
-    <a href="https://github.com/your-username/real-estate-distance-analysis" target="_blank" class="project-button">View Project</a>
-  </div>
-</section>
-
-<!-- Slideshow Modal -->
-<div id="slideshow-modal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <div id="slideshow-container"></div>
-    <button id="prev-slide">Previous</button>
-    <button id="next-slide">Next</button>
+<!-- Project Carousel Modal -->
+<div class="carousel-container" id="carousel">
+  <div class="carousel" id="projectCarousel">   
   </div>
 </div>
+<div class="carousel-indicators" id="carouselIndicators"></div>
+
 
 <section id="skills" class="section">
   <h2>My Skills</h2>
