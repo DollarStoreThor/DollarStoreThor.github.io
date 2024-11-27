@@ -1,0 +1,341 @@
+/* General Body Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  color: #333;
+  box-sizing: border-box;
+}
+
+/* Header Styling */
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background:  linear-gradient(90deg, hsla(0, 0%, 0%, 0.5), hsl(254,67%,13%, 0.5), hsl(275,82%,22%, 0.5), hsl(297,65%,26%, 0.5), hsl(324,58%,36%, 0.5), hsl(345,54%,47%, 0.5), hsl(8,70%,54%, 0.5), hsl(25,89%,52%, 0.5), hsl(38,97%,51%, 0.5), hsl(49,90%,61%, 0.5), hsl(49,90%,61%, 0.5));
+  color: hsl(0, 0%, 0%);
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.125);
+  transition: all 0.3s ease;
+}
+
+.main-header .navbar {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.main-header a {
+  text-decoration: none;
+  color:  hsl(0, 0%, 100%);
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.main-header a:hover {
+  color: hsl(0, 0%, 50%);
+}
+
+/* Flexbox Layout for Centering */
+.section {
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center;     /* Centers content vertically */
+  text-align: center;
+  padding: 100px 20px;
+  flex-direction: column;  /* Stacks items in a column for vertical alignment */
+}
+
+.title-card {
+  position: relative;
+  height: 100vh;
+  background: url('ba55aa56-995b-484b-af27-06b0a04c0d52.jpg') center center no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adds dark overlay */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.title-card h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  transform: translateY(20px);
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* About Content Section */
+.about-content {
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center;     /* Align items vertically */
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;         /* Allows wrapping on smaller screens */
+  max-width: 900px;        /* Limits width to avoid overly stretched content */
+  margin: 0 auto;          /* Horizontally center */
+}
+
+.about-photo {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+  max-width: 600px;
+  line-height: 1.6;
+  color: #555;
+  text-align: left; /* Text alignment inside the container */
+}
+
+/* General Styling for Project Section */
+
+.carousel-container {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  background:  linear-gradient(90deg, hsla(0, 0%, 0%, 0.5), hsl(254,67%,13%, 0.5), hsl(275,82%,22%, 0.5), hsl(297,65%,26%, 0.5), hsl(324,58%,36%, 0.5), hsl(345,54%,47%, 0.5), hsl(8,70%,54%, 0.5), hsl(25,89%,52%, 0.5), hsl(38,97%,51%, 0.5), hsl(49,90%,61%, 0.5), hsl(49,90%,61%, 0.5));
+  position: relative;
+
+  /* Add mask for transparency effect */
+  mask-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 1) 6.25%, rgba(0, 0, 0, 1) 93.75%, transparent);
+  mask-mode: match-source;
+  -webkit-mask-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 1) 6.25%, rgba(0, 0, 0, 1) 93.75%, transparent);
+  -webkit-mask-mode: match-source;
+}
+
+/* Add smooth transition for manual sliding */
+.carousel {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.project-card {
+  flex: 0 0 33.33%; /* 3 cards on larger screens */
+  background: #fff;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* Make the card layout vertical */
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  height: 100%;
+}
+
+.project-title {
+  font-size: clamp(15px, 3vw, 35px); /* Adjust the title size */
+  text-align: center;
+  margin-bottom: 10px; /* Space between title and description */
+}
+
+.project-description {
+  font-size: clamp(1px, 3vw, 15px); /* Adjust the description size */
+  text-align: justify;
+  margin-bottom: 10px; /* Space between title and description */
+}
+
+/* For smaller screens, like tablets (2 cards) */
+@media (max-width: 1024px) {
+  .project-card {
+    flex: 0 0 50%; /* 2 cards per row */
+  }
+}
+
+/* For very small screens (1 card) */
+@media (max-width: 768px) {
+  .project-card {
+    flex: 0 0 100%; /* 1 card per row */
+  }
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.carousel-indicators .dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-indicators .dot.active {
+  background-color: hsl(0, 0%, 50%);
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+
+/* Skill Section with Progress Bars */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.skill {
+  background:  linear-gradient(90deg, hsl(240,100%,0%), hsl(254,67%,13%), hsl(275,82%,22%), hsl(297,65%,26%), hsl(324,58%,36%), hsl(345,54%,47%), hsl(8,70%,54%), hsl(25,89%,52%), hsl(38,97%,51%), hsl(49,90%,61%), hsl(49,90%,61%));
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.skill h3 {
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.progress-bar {
+  background:  #ffffff50;
+  border-radius: 20px;
+  height: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress {
+  background:  #ffffff;
+  height: 100%;
+  transition: width 1s ease-in-out;
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input, .contact-form textarea {
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.contact-form button {
+  padding: 12px;
+  background-color: hsl(0, 0%, 50%, 0.5);
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background:  linear-gradient(90deg, hsla(0, 0%, 0%, 0.5), hsl(254,67%,13%, 0.5), hsl(275,82%,22%, 0.5), hsl(297,65%,26%, 0.5), hsl(324,58%,36%, 0.5), hsl(345,54%,47%, 0.5), hsl(8,70%,54%, 0.5), hsl(25,89%,52%, 0.5), hsl(38,97%,51%, 0.5), hsl(49,90%,61%, 0.5), hsl(49,90%,61%, 0.5));
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease;
+}
+
+/* Footer styling */
+footer {
+  background:  linear-gradient(90deg, hsla(0, 0%, 0%, 0.5), hsl(254,67%,13%, 0.5), hsl(275,82%,22%, 0.5), hsl(297,65%,26%, 0.5), hsl(324,58%,36%, 0.5), hsl(345,54%,47%, 0.5), hsl(8,70%,54%, 0.5), hsl(25,89%,52%, 0.5), hsl(38,97%,51%, 0.5), hsl(49,90%,61%, 0.5), hsl(49,90%,61%, 0.5));
+  padding: 20px 0; /* Vertical spacing */
+}
+
+.footer-container {
+  text-align: center; /* Center the content */
+  font-size: 16px; /* Adjust font size */
+  font-family: Arial, sans-serif; /* Use a clean font */
+  color: #ffffff; /* Text color */ 
+}
+
+.footer-container a {
+  text-decoration: none; /* Remove underlines from links */
+  color: #ffffff; /* White color for links */
+  transition: background-color 0.3s ease;
+  margin: 0 10px; /* Space between links */
+}
+
+.footer-container a:hover {
+  color: rgb(128, 128, 128); /* Grey on hover */
+  transition: background-color 0.3s ease;
+}
+
+.footer-container span {
+  color: #555; /* Slightly darker grey for the copyright text */
+}
+
+
+/* Ensure items are well-aligned on mobile devices */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column; /* Stack items vertically */
+    text-align: center;     /* Center text on mobile */
+  }
+
+  .about-photo {
+    margin-bottom: 15px; /* Space below the photo */
+  }
+
+  .skills-container {
+    grid-template-columns: 1fr; /* Stack skills vertically on mobile */
+  }
+
+  .contact-form {
+    width: 90%; /* Take up most of the width on mobile */
+  }
+}
